@@ -27,14 +27,14 @@ def load_models():
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(model_name,
                                                  device_map="auto",
-                                                 torch_dtype=torch.float16,
+                                                 torch_dtype=torch.float32,
                                                  low_cpu_mem_usage=True)
     
     pipe = pipeline(
         "text-generation",
         model=model, 
         tokenizer=tokenizer, 
-        max_new_tokens=512,
+        max_new_tokens=256,
         temperature=0.7,
         top_p=0.95,
         repetition_penalty=1.15,
