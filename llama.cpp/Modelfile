@@ -1,0 +1,1 @@
+FROM ./models/tokenizers/Llama-3-MAAL-8B-Instruct-v0.1/ggml-model-f16.gguf
